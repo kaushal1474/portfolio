@@ -8,6 +8,7 @@ import { styles } from '../styles'
 import { EarthCanvas } from './canvas'
 import { slideIn } from '../utils/motion'
 
+const emailjsSecret = process.env.NEXT_PUBLIC_EMAILJS
 const Contact = () => {
   const formRef = useRef()
   const [form, setForm] = useState({
@@ -68,7 +69,7 @@ const Contact = () => {
         to_email: "kaushalchaunah1474@gmail.com",
         message: form.message
       },
-      "HHyHN7ES_K8HB5nnb"
+      emailjsSecret || ""
     )
       .then(() => {
         setLoading(false);
