@@ -8,7 +8,7 @@ import { styles } from '../styles'
 import { EarthCanvas } from './canvas'
 import { slideIn } from '../utils/motion'
 
-const emailjsSecret = process.env.NEXT_PUBLIC_EMAILJS
+const emailjsSecret = import.meta.env.VITE_APP_EMAILJS
 const Contact = () => {
   const formRef = useRef()
   const [form, setForm] = useState({
