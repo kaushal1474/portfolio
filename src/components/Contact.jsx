@@ -26,13 +26,13 @@ const Contact = () => {
 
     switch (name) {
       case 'name':
-        error = value.trim() < 4;
+        error = value.trim().length < 4;
         break;
       case 'email':
         error = !value.trim() || !/\S+@\S+\.\S+/.test(value);
         break;
       case 'message':
-        error = value.trim() < 10;
+        error = value.trim().length < 10;
         break;
       default:
         error = false;
